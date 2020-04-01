@@ -1,0 +1,41 @@
+.heading {
+    text-align: center;
+}
+
+.upper-container {
+    display: grid;
+    margin-left: 25%;
+    margin-right: 25%;
+    outline-style: solid;
+    outline-color: black;
+}
+
+.info-results {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    width: 75%;
+    justify-items: center;
+    outline-style: solid;
+    outline-color: black;
+    height: 300px;
+    
+}
+
+.computer-stuff {
+    grid-column-start: 5;
+    grid-column-end: 8;
+    width: 75%;
+    text-align: center;
+    text-justify: auto;
+    height: 300px;
+}
+
+.buttons-misc {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.images {
+    width: 150px;
+    height: 150px;
+}

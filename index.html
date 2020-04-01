@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="heading">
+        <h1>じゃん!!!</h1>
+    </div>
+
+    <container class="upper-container">
+        <div class="info-results">
+            <div id="result"></div>
+            <div>Games played:<span id="total-plays"></span></div>
+            <div>Games won:<span id="total-wins">6</span></div>
+            <div>Win percentage: <span id="percentage"></span>%</div>
+        </div>
+
+        <div class="computer-stuff">
+            <h2>YOUR OPPONENT</h2>
+            <div id="computer-throw"></div>
+        </div>
+    </container>
+
+    <div class="buttons-misc">
+        <div>
+            <label>
+                <input name="throw" type="radio" value="rock"/>
+                    <img class="images" src="./images/rock.png">
+            </label>
+            <label>
+                <input name="throw" type="radio" value="paper"/>
+                    <img class="images" src="./images/paper.png">
+            </label>
+            <label>
+                <input name="throw" type="radio" value="scissors" size/>
+                    <img class="images" src="./images/scissors.png">
+            </label>
+            <div>
+                <button id="submit">SUBMIT</button>
+            </div>
+            <div>
+                <button id="reset">RESET</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>
