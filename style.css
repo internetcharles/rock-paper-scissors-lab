@@ -1,3 +1,24 @@
+html {
+    font-family: 'Oswald', sans-serif;
+}
+
+input[type=radio]:checked + img {
+    border: dashed 2px black;
+}
+
+input {
+    display: none;
+}
+
+button:hover {
+    font-family: 'Oswald', sans-serif;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+button {
+    font-family: 'Oswald', sans-serif;
+}
+
 .heading {
     text-align: center;
 }
