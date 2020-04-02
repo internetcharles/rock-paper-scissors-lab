@@ -46,9 +46,9 @@ function computerThrow() {
 
 // percentage
 function getPercentage() {
-    let decimal = winCounter / playCounter;
-    let biggerNumber = decimal * 100;
-    let finalNumber = Math.round(biggerNumber);
+    let percentageDecimal = winCounter / playCounter;
+    let unroundedPercentage = percentageDecimal * 100;
+    let finalNumber = Math.round(unroundedPercentage);
     return finalNumber;
 }
 
@@ -82,9 +82,11 @@ playButton.addEventListener('click', () => {
 resetButton.addEventListener('click', () => {
     playCounter = 0;
     winCounter = 0;
+    winPercentage.textContent = 0;
+    
     totalPlays.textContent = playCounter;
     totalWins.textContent = winCounter;
-    winPercentage.textContent = 0;
+    
     result.textContent = '';
     computerMove.textContent = '';
     paperImage.style.display = 'none';
