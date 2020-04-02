@@ -2,8 +2,8 @@ import { rockPaperScissors } from './rockPaperScissors.js';
 
 const playButton = document.getElementById('submit');
 const resetButton = document.getElementById('reset');
-let totalPlays = document.getElementById('total-plays');
-let totalWins = document.getElementById('wins');
+const totalPlays = document.getElementById('total-plays');
+const totalWins = document.getElementById('wins');
 const winPercentage = document.getElementById('percentage');
 const result = document.getElementById('result');
 const computerMove = document.getElementById('computer-throw');
@@ -58,10 +58,11 @@ playButton.addEventListener('click', () => {
 
     let userSelection = selection.value;
     let botSelection = computerThrow();
+    
+    playCounter++;
 
     if (rockPaperScissors(userSelection, botSelection) === 1) {
         console.log('Player wins!');
-        playCounter++;
         winCounter++;
         totalPlays.textContent = playCounter;
         totalWins.textContent = winCounter;
@@ -71,14 +72,12 @@ playButton.addEventListener('click', () => {
     }
     else if (rockPaperScissors(userSelection, botSelection) === 2) {
         console.log('Draw!');
-        playCounter++;
         totalPlays.textContent = playCounter;
         result.textContent = 'DRAW';
         winPercentage.textContent = getPercentage();
     }
     else if (rockPaperScissors(userSelection, botSelection) === 3) {
         console.log('Player loses!');
-        playCounter++;
         totalPlays.textContent = playCounter;
         result.textContent = 'YOU LOSE!';
         winPercentage.textContent = getPercentage();
