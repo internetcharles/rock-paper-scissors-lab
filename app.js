@@ -60,11 +60,12 @@ playButton.addEventListener('click', () => {
     let botSelection = computerThrow();
     
     playCounter++;
-
+    totalPlays.textContent = playCounter;
+    
     if (rockPaperScissors(userSelection, botSelection) === 1) {
         console.log('Player wins!');
         winCounter++;
-        totalPlays.textContent = playCounter;
+
         totalWins.textContent = winCounter;
         result.textContent = 'YOU WIN!';
         winPercentage.textContent = getPercentage();
@@ -72,13 +73,11 @@ playButton.addEventListener('click', () => {
     }
     else if (rockPaperScissors(userSelection, botSelection) === 2) {
         console.log('Draw!');
-        totalPlays.textContent = playCounter;
         result.textContent = 'DRAW';
         winPercentage.textContent = getPercentage();
     }
     else if (rockPaperScissors(userSelection, botSelection) === 3) {
         console.log('Player loses!');
-        totalPlays.textContent = playCounter;
         result.textContent = 'YOU LOSE!';
         winPercentage.textContent = getPercentage();
     }
