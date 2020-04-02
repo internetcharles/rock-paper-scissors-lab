@@ -68,22 +68,17 @@ playButton.addEventListener('click', () => {
 
         totalWins.textContent = winCounter;
         result.textContent = 'YOU WIN!';
-        winPercentage.textContent = getPercentage();
-        
     }
     else if (rockPaperScissors(userSelection, botSelection) === 2) {
         console.log('Draw!');
         result.textContent = 'DRAW';
-        winPercentage.textContent = getPercentage();
     }
     else if (rockPaperScissors(userSelection, botSelection) === 3) {
         console.log('Player loses!');
         result.textContent = 'YOU LOSE!';
-        winPercentage.textContent = getPercentage();
     }
 
-    
-
+    winPercentage.textContent = getPercentage();
 });
 
 // reset button
