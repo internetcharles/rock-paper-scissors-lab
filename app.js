@@ -63,18 +63,14 @@ playButton.addEventListener('click', () => {
     totalPlays.textContent = playCounter;
     
     if (rockPaperScissors(userSelection, botSelection) === 1) {
-        console.log('Player wins!');
         winCounter++;
-
         totalWins.textContent = winCounter;
         result.textContent = 'YOU WIN!';
     }
     else if (rockPaperScissors(userSelection, botSelection) === 2) {
-        console.log('Draw!');
         result.textContent = 'DRAW';
     }
     else if (rockPaperScissors(userSelection, botSelection) === 3) {
-        console.log('Player loses!');
         result.textContent = 'YOU LOSE!';
     }
 
