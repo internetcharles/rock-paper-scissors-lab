@@ -7,6 +7,9 @@ let totalWins = document.getElementById('wins');
 const winPercentage = document.getElementById('percentage');
 const result = document.getElementById('result');
 const computerMove = document.getElementById('computer-throw');
+const rockImage = document.getElementById('rockimage');
+const paperImage = document.getElementById('paperimage');
+const scissorsImage = document.getElementById('scissorsimage');
 
 //initialize section
 let playCounter = 0;
@@ -19,14 +22,24 @@ function computerThrow() {
 
     if (roundedThrow === 0) {
         computerMove.textContent = 'ROCK!';
+        rockImage.style.display = 'block';
+        paperImage.style.display = 'none';
+        scissorsImage.style.display = 'none';
         return 'rock';
+
     }
     else if (roundedThrow === 1) {
         computerMove.textContent = 'PAPER!';
+        paperImage.style.display = 'block';
+        scissorsImage.style.display = 'none';
+        rockImage.style.display = 'none';
         return 'paper';
     }
     else if (roundedThrow === 2) {
         computerMove.textContent = 'SCISSORS!';
+        scissorsImage.style.display = 'block';
+        paperImage.style.display = 'none';
+        rockImage.style.display = 'none';
         return 'scissors';
     }
 }
@@ -83,4 +96,9 @@ resetButton.addEventListener('click', () => {
     totalPlays.textContent = playCounter;
     totalWins.textContent = winCounter;
     winPercentage.textContent = 0;
+    result.textContent = '';
+    computerMove.textContent = '';
+    paperImage.style.display = 'none';
+    rockImage.style.display = 'none';
+    scissorsImage.style.display = 'none';
 });
