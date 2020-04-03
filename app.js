@@ -2,8 +2,8 @@ import { rockPaperScissors } from './rockPaperScissors.js';
 
 const playButton = document.getElementById('submit');
 const resetButton = document.getElementById('reset');
-let totalPlays = document.getElementById('total-plays');
-let totalWins = document.getElementById('wins');
+const totalPlays = document.getElementById('total-plays');
+const totalWins = document.getElementById('wins');
 const winPercentage = document.getElementById('percentage');
 const result = document.getElementById('result');
 const computerMove = document.getElementById('computer-throw');
@@ -46,9 +46,9 @@ function computerThrow() {
 
 // percentage
 function getPercentage() {
-    let decimal = winCounter / playCounter;
-    let biggerNumber = decimal * 100;
-    let finalNumber = Math.round(biggerNumber);
+    let percentageDecimal = winCounter / playCounter;
+    let unroundedPercentage = percentageDecimal * 100;
+    let finalNumber = Math.round(unroundedPercentage);
     return finalNumber;
 }
 
@@ -58,34 +58,23 @@ playButton.addEventListener('click', () => {
 
     let userSelection = selection.value;
     let botSelection = computerThrow();
-
+    
+    playCounter++;
+    totalPlays.textContent = playCounter;
+    
     if (rockPaperScissors(userSelection, botSelection) === 1) {
-        console.log('Player wins!');
-        playCounter++;
         winCounter++;
-        totalPlays.textContent = playCounter;
         totalWins.textContent = winCounter;
         result.textContent = 'YOU WIN!';
-        winPercentage.textContent = getPercentage();
-        
     }
     else if (rockPaperScissors(userSelection, botSelection) === 2) {
-        console.log('Draw!');
-        playCounter++;
-        totalPlays.textContent = playCounter;
         result.textContent = 'DRAW';
-        winPercentage.textContent = getPercentage();
     }
     else if (rockPaperScissors(userSelection, botSelection) === 3) {
-        console.log('Player loses!');
-        playCounter++;
-        totalPlays.textContent = playCounter;
         result.textContent = 'YOU LOSE!';
-        winPercentage.textContent = getPercentage();
     }
 
-    
-
+    winPercentage.textContent = getPercentage();
 });
 
 // reset button
@@ -93,9 +82,11 @@ playButton.addEventListener('click', () => {
 resetButton.addEventListener('click', () => {
     playCounter = 0;
     winCounter = 0;
+    winPercentage.textContent = 0;
+    
     totalPlays.textContent = playCounter;
     totalWins.textContent = winCounter;
-    winPercentage.textContent = 0;
+    
     result.textContent = '';
     computerMove.textContent = '';
     paperImage.style.display = 'none';
